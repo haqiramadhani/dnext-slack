@@ -1,9 +1,14 @@
-import { MessageContainer, MessageInfo } from "./MessageElements";
+import {
+  MessageAvatar,
+  MessageContainer,
+  MessageInfo,
+} from "./MessageElements";
 
 function Message({ message, timestamp, user, userImage }) {
   return (
     <MessageContainer>
-      <img src={userImage} alt={user} />
+      {/*<img src={userImage} alt={user} />*/}
+      <MessageAvatar src={userImage} alt={user} />
       <MessageInfo>
         <h4>
           {user} <span>{new Date(timestamp?.toDate()).toUTCString()}</span>

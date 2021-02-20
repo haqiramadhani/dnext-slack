@@ -1,4 +1,5 @@
 import {
+  ChatBottom,
   ChatContainer,
   ChatMessages,
   Header,
@@ -11,13 +12,15 @@ import { useSelector } from "react-redux";
 import { selectRoomId } from "../../features/appSlice";
 import { useCollection, useDocument } from "react-firebase-hooks/firestore";
 import { db } from "../../firebase";
+import { useEffect, useRef } from "react";
 
 function Chat() {
+  const chatRef = useRef(null);
   const roomId = useSelector(selectRoomId);
   const [roomDetails] = useDocument(
     roomId && db.collection("rooms").doc(roomId)
   );
-  const [roomMessages] = useCollection(
+  const [roomMessages, loading] = useCollection(
     roomId &&
       db
         .collection("rooms")
@@ -26,30 +29,42 @@ function Chat() {
         .orderBy("timestamp", "asc")
   );
 
+  useEffect(() => {
+    chatRef?.current?.scrollIntoView({ behavior: "smooth" });
+  }, [roomId, loading]);
+
   return (
     <ChatContainer>
-      <>
-        <Header>
-          <HeaderLeft>
-            <h4>
-              <strong>#{roomDetails?.data().name}</strong>
-            </h4>
-            <StarBorderOutlined />
-          </HeaderLeft>
+      {roomDetails && roomMessages && (
+        <>
+          <Header>
+            <HeaderLeft>
+              <h4>
+                <strong>#{roomDetails?.data().name}</strong>
+              </h4>
+              <StarBorderOutlined />
+            </HeaderLeft>
 
-          <HeaderRight>
-            <InfoOutlined /> <p>Details</p>
-          </HeaderRight>
-        </Header>
+            <HeaderRight>
+              <InfoOutlined /> <p>Details</p>
+            </HeaderRight>
+          </Header>
 
-        <ChatMessages>
-          {roomMessages?.docs.map((doc, index) => (
-            <Message key={index} {...doc.data()} />
-          ))}
-        </ChatMessages>
+          <ChatMessages>
+            {roomMessages?.docs.map((doc, index) => (
+              <Message key={index} {...doc.data()} />
+            ))}
 
-        <ChatInput channelName={roomDetails?.data().name} roomId={roomId} />
-      </>
+            <ChatBottom ref={chatRef} />
+          </ChatMessages>
+
+          <ChatInput
+            chatRef={chatRef}
+            channelName={roomDetails?.data().name}
+            roomId={roomId}
+          />
+        </>
+      )}
     </ChatContainer>
   );
 }

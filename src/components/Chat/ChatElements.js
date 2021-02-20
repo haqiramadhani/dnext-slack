@@ -46,3 +46,7 @@ export const HeaderRight = styled.div`
 `;
 
 export const ChatMessages = styled.div``;
+
+export const ChatBottom = styled.div`
+  padding-bottom: 200px;
+`;
