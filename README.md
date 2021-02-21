@@ -7,7 +7,7 @@
 
 Demo [Slaku](https://slack-clone-c2812.web.app/)
 
-![Deploy](/demo.png)
+[![Deploy](/demo.png)](https://slack-clone-c2812.web.app/)
 
 </div>
 
