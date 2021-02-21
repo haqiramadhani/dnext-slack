@@ -8,7 +8,7 @@
 ## Demo 
 [![Demo](/play.png =50x50)](https://slack-clone-c2812.web.app/)
 
-[![Demo](/demo.png =50x50)](https://slack-clone-c2812.web.app/)
+## [![Demo](/demo.png =50x50)](https://slack-clone-c2812.web.app/) Open
 
 </div>
 
