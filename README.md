@@ -6,9 +6,9 @@
 [![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/haqiramadhani/slack-clone)
 
 ## Demo 
-[![Demo](/play.png)](https://slack-clone-c2812.web.app/)
+[![Demo](/play.png =50x50)](https://slack-clone-c2812.web.app/)
 
-[![Demo](/demo.png)](https://slack-clone-c2812.web.app/)
+[![Demo](/demo.png =50x50)](https://slack-clone-c2812.web.app/)
 
 </div>
 
