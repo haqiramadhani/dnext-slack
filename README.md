@@ -5,9 +5,9 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/haqiramadhani/slack-clone)
 [![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/haqiramadhani/slack-clone)
 
-Demo [Slaku](https://slack-clone-c2812.web.app/)
+## Demo [![Demo](/play.png)](https://slack-clone-c2812.web.app/)
 
-[![Deploy](/demo.png)](https://slack-clone-c2812.web.app/)
+[![Demo](/demo.png)](https://slack-clone-c2812.web.app/)
 
 </div>
 
